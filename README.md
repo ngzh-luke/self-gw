@@ -16,7 +16,7 @@ Personal Project: `GW` is a Python based web app powered by FastAPI to redirect 
 
 Current Status: **Initial Development**
 
-Current Version: **0.1.0**
+Current Version: **0.1.2**
 
 Updated: **March 17, 2024**
 
@@ -40,12 +40,12 @@ Updated: **March 17, 2024**
 activate virtual environment (Windows) by run command: `venv\Scripts\activate`
 
 7. install project dependencies by run command:
-`pip install -r requirements.txt`
+`pip install -r requirements/base.txt`
 
 8. run command to start the application:
 `uvicorn main:app --reload`
 
-9. check out the running application on browser by navigate to: `127.0.0.1:8800`
+9. check out the running application on browser by navigate to: `127.0.0.1:8000`
 
 10. impressed by the cool application!
 
@@ -61,4 +61,4 @@ activate virtual environment (Windows) by run command: `venv\Scripts\activate`
 ### Resources
 
 - <https://github.com/zhanymkanov/fastapi-best-practices>
-- <https://github.com/zhanymkanov/fastapi_production_template/blob/main/src/auth/schemas.py>
+- <https://github.com/zhanymkanov/fastapi_production_template>

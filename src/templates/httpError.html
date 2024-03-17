@@ -1,0 +1,17 @@
+{% extends 'root.html' %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %} {{code}} Error - GW {% endblock %}</title>
+  </head>
+  {% block body %}
+  <h3 align="center" class="my-1" style="color: saddlebrown">
+    ERROR: {{detail}}
+  </h3>
+  <div align="center" class="my-1">
+    <a href="/" type="button" class="btn btn-lg btn-info">Back Home</a>
+  </div>
+  {% endblock %}
+</html>

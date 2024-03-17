@@ -1,11 +1,10 @@
-""" Authentication router """
+""" Admin router """
 
 from fastapi import APIRouter
 
+adminRouter = APIRouter()
 
-authRouter = APIRouter()
 
-
-@authRouter.get('/')
+@adminRouter.get('/')
 async def root():
     return {"message": "Hello World"}
