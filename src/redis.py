@@ -5,6 +5,22 @@ from datetime import timedelta
 from typing import Optional
 from redis.asyncio import Redis
 from .models import CustomModel
+import config
+
+try:
+    r = Redis(
+        host=config.REDISHOST, port=config.REDISPORT,
+        # use your Redis user. More info https://redis.io/docs/management/security/acl/
+        username=config.REDISUSER,
+        password=config.REDISPASSWORD,  # use your Redis password
+        decode_responses=True
+    )
+except ConnectionError:
+    r = Redis(host='localhost', port=6379, decode_responses=True)
+except Exception as e:
+    print("Redis connection failed")
+    exit(code=1)
+
 
 redisClient: Redis = Redis  # type: ignore
 

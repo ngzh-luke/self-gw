@@ -2,7 +2,7 @@
 
 from fastapi import APIRouter, Request
 from fastapi.responses import HTMLResponse, PlainTextResponse
-from config import TEMPLATES as t
+from utils import TEMPLATES as t
 from config import VERSION, DESCRIPTION
 
 router = APIRouter()
@@ -14,6 +14,6 @@ async def index(request: Request):
         request=request, name="index.html")
 
 
-@router.get('/...', response_description='GW version')
-async def info():
+@router.get('/@/...', response_description='GW version')
+async def version():
     return PlainTextResponse(content=f"version: {VERSION}")

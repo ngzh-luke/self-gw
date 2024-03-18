@@ -1,16 +1,23 @@
-""" Schemas """
+""" Authentication Schemas """
 # Adapted from https://github.com/zhanymkanov/fastapi_production_template/blob/main/src/auth/schemas.py
 
 import re as regx
 from pydantic import Field, field_validator
-
 from src.models import CustomModel
 
 STRONG_PASSWORD_PATTERN = regx.compile(
     r"^(?=.*[\d])(?=.*[!@#$%^&*])[\w!@#$%^&*]{6,128}$")
 
 
-class AuthUser(CustomModel):
+class UserBaseModel(CustomModel):
+    """ Base (root) schema for user """
+    uid: str
+    username: str
+    password: str
+
+
+class AuthUser(UserBaseModel):
+    """ Register user schema """
     username: str = Field(min_length=3, max_length=25)
     password: str = Field(min_length=6, max_length=256)
 
@@ -31,3 +38,18 @@ class AuthUser(CustomModel):
 
 class UserResponse(CustomModel):
     username: str
+
+
+class User(UserBaseModel):
+    """ Schema for user in general """
+    username: str
+    password: str
+
+
+class Token(CustomModel):
+    accessToken: str
+    tokenType: str
+
+
+class TokenData(CustomModel):
+    userID: str | None = None

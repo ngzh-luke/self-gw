@@ -16,9 +16,9 @@ Personal Project: `GW` is a Python based web app powered by FastAPI to redirect 
 
 Current Status: **Initial Development**
 
-Current Version: **0.1.2**
+Current Version: **0.1.4**
 
-Updated: **March 17, 2024**
+Updated: **March 18, 2024**
 
 ## Instructions of running locally
 
